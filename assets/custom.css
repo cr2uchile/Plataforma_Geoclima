@@ -1,0 +1,286 @@
+/*Fonts ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: #F3F4F9;
+  font-family: 'Roboto';
+  color: #0071bc;
+  -webkit-text-size-adjust:none;
+}
+
+.study-browser-banner {
+  background: #2196d1;
+  color: white;
+  padding: 8px;
+  padding-left: 48px;
+  -webkit-box-shadow: 2px 2px 15px #999;
+  -moz-box-shadow: 2px 2px 15px #999;
+  box-shadow: 2px 2px 15px #999
+}
+
+.div-logo{
+  display: inline-block;
+  float: right;
+}
+
+.logo{
+  height: 65px;
+  padding: 6px;
+  margin-top: 10px;
+  max-width:15%;
+  max-height:4%;
+
+}
+
+.logoCr2{
+  height: 65px;
+  padding: 6px;
+  margin-top: 10px;
+  max-width:20%;
+  max-height:15%;  
+}
+
+.logoclima{
+  height: 60px;
+  padding: 0px;
+  margin-left: 15px;
+  margin-top: 25px;
+}
+
+.logoclimamobile{
+  height: 40px;
+  padding: 0px;
+  margin-left: 0px;
+  margin-top: 22px;
+}
+
+.h2-title{
+  font-family: 'Roboto';
+  display: inline-block;
+  letter-spacing: 3.8px;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.h2-title-mobile{
+  display: none;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1002; /* Sit on top, including modebar which has z=1001 */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+    overflow: auto;	
+}
+
+.modal-content {
+    display: block;
+    position:relative;
+    margin: 90px;
+    padding: 30px;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: black;
+    border-radius: 15px;    
+  -webkit-box-shadow: 2px 2px 15px #555;
+  -moz-box-shadow: 2px 2px 15px #555;
+  box-shadow: 2px 2px 15px #555;
+  min-width:520px;
+
+}
+
+#modal-close-button{
+  display: block;
+  position: relative;
+  margin-left:120px;
+  margin-top:-145px;
+     border: 0;
+     background: none;
+     color:black;
+     border: 2px solid black
+}
+h5, h6{
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: 16px;
+}
+
+h5{
+  padding-left: 42px;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336; 
+  color: white;
+}
+
+.bg-white{
+  background-color: white;
+  padding: 14px 32px;
+  height: 780px;
+  -webkit-box-shadow: 2px 2px 15px #999;
+  -moz-box-shadow: 2px 2px 15px #999;
+  box-shadow: 2px 2px 15px #999
+}
+
+.bg-white2{
+  background-color: white;
+  padding: 14px 32px;
+  height: 550px;
+  -webkit-box-shadow: 2px 2px 15px #999;
+  -moz-box-shadow: 2px 2px 15px #999;
+  box-shadow: 2px 2px 15px #999
+}
+
+
+.app-body{
+  margin-left: 4%;
+}
+
+.card{
+  padding:48px 24px 48px 24px;
+  margin-left: 4%;
+}
+
+.card-left{
+  padding:48px 24px 48px 24px;
+  margin-left: 0px;
+}
+
+.card-left2{
+  padding:6px 24px 48px 24px;
+  margin-left: 0px;
+}
+
+.buttons{
+  text-align: center;
+  margin-left: 4%;
+}
+
+.botones-download{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.padding-top-bot{
+  padding-top: 12px;
+  padding-bottom: 18px;
+}
+
+#color-slider{
+  width:40%;
+  margin: 0 auto;
+}
+.upload{
+  width: 100%;
+  line-height: 60px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.upload p, .upload a {
+  display: inline;
+}
+
+.Select-control{
+  border: 1px solid #203cb3;
+}
+
+
+/* mobile */
+@media only screen and (max-width: 1380px) {
+  .upload{
+    line-height: 60px;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 5px;
+    text-align: center;
+    font-size: small;
+  }
+
+h5, h6{
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: 12px;
+}
+  .columns{
+    width: 100%;
+  }
+
+  .card, .card-left{
+    padding: 24px;  
+    margin: 0px;
+  } 
+
+  .bg-white{
+    height: auto;
+  }
+
+  .bg-white2{
+    height: auto;
+  }
+    
+  .study-browser-banner{
+    padding-left: 24px;
+  }
+  
+  .div-logo{
+    float: right;
+    display: inline-block;
+  }
+
+  .logo{
+    display: inline-block;
+    height: 45px;
+    padding-left:0px;
+    padding-bottom:0px;
+  }
+
+  .logoCr2{
+    display: inline-block;  
+    height: 45px;
+    padding-left:0px;
+    padding-bottom:0px;
+    float:right
+  }
+
+  .h2-title{
+    display:none;
+  }
+
+  .h2-title-mobile{
+    display:block;
+    text-align:left;  
+  }
+
+  .app-body{
+    margin-left: 0px;
+  }
+
+  .four.columns                   { width: 100%; }
+  .eight.columns                  { width: 100%; }
+  .twelve.columns                 { width: 100%; }
+  
+  .columns{
+    text-align: center;
+  }
+  
+
+  .user-control{
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
