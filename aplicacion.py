@@ -205,7 +205,7 @@ app.layout = html.Div(
         html.Div(
             className="study-browser-banner row",
             children=[
-                html.Div(className="h2-title", children=[html.A([html.Img(className="logoclima", src=app.get_asset_url("LOGO_GEOCLIMA.png"))], href="http://geoclima.cr2.cl/")]),
+                html.Div(className="h2-title", children=[html.A([html.Img(className="logoclima", src=app.get_asset_url("logo_geoclima_blanco.png"))], href="http://geoclima.cr2.cl/")]),
                 html.Div(
                     className="div-logo",
                     children=[html.A(id='instructions-button',className='links',children=[html.H6('Acerca de', style={'display':'inline-block','float':'left','margin-top':'40px','margin-right':'10px'})]),
@@ -222,7 +222,7 @@ app.layout = html.Div(
                     ], href="http://www.cr2.cl/")
                     ]
                 ),modal,
-                html.Div(className="h2-title-mobile", children=[html.A([html.Img(className="logoclimamobile", src=app.get_asset_url("LOGO_GEOCLIMA.png"))], href="http://geoclima.cr2.cl/")]),
+                html.Div(className="h2-title-mobile", children=[html.A([html.Img(className="logoclimamobile", src=app.get_asset_url("logo_geoclima_blanco.png"))], href="http://geoclima.cr2.cl/")]),
             ],
         ),
         # Cuerpo de la app
@@ -338,7 +338,7 @@ app.layout = html.Div(
                             children=[
                                 #html.H5("Mapa con variable"),
                                 #mapa
-                                dcc.Graph(id="mapaglobal",style={'height':'530px'},config={'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d', 'toggleSpikelines','autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], "locale":"es",'displaylogo':False}),
+                                dcc.Graph(id="mapaglobal",style={'height':'530px'},config={'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d', 'toggleSpikelines','autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], "locale":"es",'displaylogo':False, 'toImageButtonOptions': { 'filename': 'figura_cr2','format': 'png','height': 350*2, 'width': 700*2,'scale':6} }),
                                 #html.Div(id = 'earth_div'),
                                 #botones retroceder/adelantar
                                 html.Div(id='controlmap',className="buttons",children=[
@@ -420,5 +420,5 @@ from callbacks import *
 #############################################################################
 if __name__ == '__main__':
 	#app.run_server()
-    app.run_server(debug=False,port='8051',host='0.0.0.0')
+    app.run_server(debug=False,port='8052',host='0.0.0.0')
 
