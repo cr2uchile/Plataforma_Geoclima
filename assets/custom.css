@@ -27,19 +27,18 @@ body{
 
 .logo{
   height: 65px;
-  padding: 6px;
+  padding: 18px;
   margin-top: 10px;
-  max-width:15%;
-  max-height:4%;
-
+  height: 35px;
+  width: auto;
 }
 
 .logoCr2{
   height: 65px;
-  padding: 6px;
+  padding: 18px;
   margin-top: 10px;
-  max-width:20%;
-  max-height:15%;  
+  height: 35px;
+  width: auto;
 }
 
 .logoclima{
@@ -47,6 +46,9 @@ body{
   padding: 0px;
   margin-left: 15px;
   margin-top: 25px;
+  height: 75px;
+  width: auto;
+
 }
 
 .logoclimamobile{
@@ -54,6 +56,9 @@ body{
   padding: 0px;
   margin-left: 0px;
   margin-top: 22px;
+  height: 75px;
+  width: auto;
+
 }
 
 .h2-title{
