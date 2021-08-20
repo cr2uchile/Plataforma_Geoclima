@@ -171,20 +171,23 @@ Las variables disponibles son la temperatura (media, máxima y mínima), precipi
 varios niveles. Dependiendo de la variable, hay diversas bases desde donde se obtuvieron los datos, que incluyen registros 
 en estaciones de medición y reanálisis atmosféricos.
 
-
-
-
-&nbsp &nbsp &nbsp &nbsp [![Piero](/assets/piero.jpg "Piero Mardones, pieromardonesb@gmail.com")](http://www.geoatlas.cl/) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-[![Rene](/assets/rene.jpg "Rene Garreaud, rgarreau@dgf.uchile.cl")](http://www.dgf.uchile.cl/rene/)
  
 Esta aplicación está pensada como un apoyo a la docencia en distintos niveles. La versión web es una extensión del software 
 original desarrollado el año 2002, bajo la supervisión del Profesor Patricio Aceituno Gutiérrez, del Departamento de Geofísica 
 de la Universidad de Chile.
-Esta nueva versión de web GeoClima fue desarrollada el año 2020 por Piero Mardones (foto izquierda), Geofísico y 
-Magíster en Meteorología y Climatología (U. Chile), y socio fundador de geoatlas.cl, , con la supervisión de René Garreaud, 
+Esta nueva versión de web GeoClima fue desarrollada el año 2020 por Piero Mardones, Geofísico y 
+Magíster en Meteorología y Climatología (U. Chile), y socio fundador de geoatlas.cl, con la supervisión de René Garreaud, 
 académico del Departamento de Geofísica U. Chile y subdirector del Centro de Ciencia del Clima y la Resiliencia (CR)2. 
-El proyecto recibió el apoyo del Departamento de Geofísica y del (CR)2. 
+El proyecto recibió el apoyo del Departamento de Geofísica y del (CR)2, a través del soporte de datos y computo por Francisca Muñoz 
+y Camilo Menares. El diseño fue revisado por Giselle Ogaz. 
 Si necesitas información sobre cómo usar esta plataforma, puedes revisar el Tutorial de Uso.
+
+
+Data Scientist: Piero Mardones, pieromardonesb@gmail.com
+
+Soporte       : Datos y Cómputos Cr2, cr2sysadmin@dgf.cl
+
+
 
 
 ---------------
@@ -244,7 +247,7 @@ app.layout = html.Div(
                                 html.Div(  style={'color': '#0071BC'} ,
                                     className="padding-top-bot",
                                     children=[
-                                        html.H6("1) Seleccione tipo de mapa:"),
+                                        html.H6("1) Seleccione producto:"),
                                         dcc.Dropdown(id="lista-variables",options=variables,placeholder='Seleccione ...',value='tmean',searchable=False,clearable=False),
                                     ],
                                 ),
@@ -321,26 +324,8 @@ app.layout = html.Div(
                                             labelStyle={'display': 'inline-block'}
                                         )                                            
                                     ],style={'color': '#0071BC', 'display':'none'}
-                                )
-                            ],
-                        )
-                    ],
-                ),
-                ######################################
-                ######################################
-                ### Mapa global ######################
-                ######################################
-                html.Div(
-                    className="eight columns card-left",
-                    children=[
-                        html.Div(id='div-mapa',
-                            className="bg-white",
-                            children=[
-                                #html.H5("Mapa con variable"),
-                                #mapa
-                                dcc.Graph(id="mapaglobal",style={'height':'530px'},config={'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d', 'toggleSpikelines','autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], "locale":"es",'displaylogo':False, 'toImageButtonOptions': { 'filename': 'figura_cr2','format': 'png','height': 350*2, 'width': 700*2,'scale':6} }),
-                                #html.Div(id = 'earth_div'),
-                                #botones retroceder/adelantar
+                                ),
+                                                                #botones retroceder/adelantar
                                 html.Div(id='controlmap',className="buttons",children=[
                                     html.H6("Retroceder/Adelantar mes:"),
                                     html.Button('<<', id='btn-nclicks-1', n_clicks=0),
@@ -371,6 +356,24 @@ app.layout = html.Div(
                                     html.Div([], id='previously-selected')
                                 ]),
                             ],
+                        )
+                    ],
+                ),
+                ######################################
+                ######################################
+                ### Mapa global ######################
+                ######################################
+                html.Div(
+                    className="eight columns card-left",
+                    children=[
+                        html.Div(id='div-mapa',
+                            className="bg-white",
+                            children=[
+                                #html.H5("Mapa con variable"),
+                                #mapa
+                                dcc.Graph(id="mapaglobal",style={'height':'610px'},config={'displayModeBar': True ,'modeBarButtonsToRemove': [ "zoom2d" , 'lasso2d', 'select2d', 'toggleSpikelines','autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], "locale":"es",'displaylogo':False, 'toImageButtonOptions': { 'filename': 'figura_cr2','format': 'png','height': 350*2, 'width': 700*2,'scale':6} }),
+                                #html.Div(id = 'earth_div'),,
+                            ],
                         ),
                     ],
                 ),
@@ -380,13 +383,13 @@ app.layout = html.Div(
                 ######################################
                 ######################################
                 html.Div(id='divgraficoclim',
-                    className="twelve columns card-left2",
+                    className="eight columns card-left",
                     children=[
                         html.Div(
                             className="bg-white2",
                             children=[
                                 html.Div(id='salida_prueba'),
-                                dcc.Graph(id="graficoclim",style={'height':'500px'},responsive=True,config={'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d', 'toggleSpikelines','autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'],"locale":"es", 'displaylogo':False}),
+                                dcc.Graph(id="graficoclim",style={'height':'500px'},responsive=True,config={'displayModeBar': True, 'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d', 'toggleSpikelines','autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'],"locale":"es", 'displaylogo':False}),
                                 html.Div(className="botones-download",children=[
                                     html.Button("Exportar a CSV", id="boton-exportarCsv", n_clicks=None),
                                     Download(id="exportarCsv")

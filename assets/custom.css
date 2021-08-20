@@ -25,6 +25,8 @@ body{
   float: right;
 }
 
+
+
 .logo{
   height: 65px;
   padding: 18px;
@@ -32,6 +34,7 @@ body{
   height: 35px;
   width: auto;
 }
+
 
 .logoCr2{
   height: 65px;
@@ -127,16 +130,28 @@ h5{
   color: white;
 }
 
+div#div-control{
+    height: 1100px;
+}
+
+div#div-control.bg-white2.user-control{
+    height: 850px;
+}
+
+
+
 .bg-white{
   background-color: white;
   padding: 14px 32px;
-  height: 780px;
+  height: 650px;
   -webkit-box-shadow: 2px 2px 15px #999;
   -moz-box-shadow: 2px 2px 15px #999;
-  box-shadow: 2px 2px 15px #999
+  box-shadow: 2px 2px 15px #999 ;
+  min-height: 650px 
 }
 
 .bg-white2{
+  margin: -70px  0px;
   background-color: white;
   padding: 14px 32px;
   height: 550px;
@@ -145,6 +160,10 @@ h5{
   box-shadow: 2px 2px 15px #999
 }
 
+.element.style {
+    height: 500px;
+    width: 900px;
+}
 
 .app-body{
   margin-left: 4%;
@@ -199,6 +218,8 @@ h5{
 .upload p, .upload a {
   display: inline;
 }
+
+
 
 .Select-control{
   border: 1px solid #203cb3;
@@ -284,7 +305,7 @@ h5, h6{
   }
   
 
-  .user-control{
+  .user-control{  
     padding-top: 24px;
     padding-bottom: 24px;
   }

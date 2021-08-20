@@ -653,7 +653,7 @@ def callback_image(clickData,variable,basedato,operacion):
         x = [],
         y = [],
         mode='lines+markers',
-        marker={'color':'red'}
+        marker={'color':'white', 'markersize':200}
         )],
         'layout':go.Layout(title='',yaxis = {'title':'','fixedrange':True},xaxis = {'title':'','showgrid': False,'fixedrange':True})
         }

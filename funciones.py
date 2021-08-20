@@ -94,7 +94,7 @@ def contourf(lons,lats,variable,mes,colorbar_label,minimo,maximo,colormap,coastc
                             title=colorbar_label, # title here
                             titleside='right',
                             titlefont=dict(
-                                size=14,
+                                size=20,
                                 #family='Arial, sans-serif'
                                 )
                             )
@@ -109,15 +109,21 @@ def contourf(lons,lats,variable,mes,colorbar_label,minimo,maximo,colormap,coastc
             
             'layout':go.Layout(
                     title=titulo + textmes + ' ' + mesesletra,
-                    margin=dict(t=40),
-                    xaxis=go.layout.XAxis(
+                    margin=dict(t=40), title_font_size= 20, 
+                    xaxis=go.layout.XAxis( 
                         title=go.layout.xaxis.Title(
-                            text='Longitud',
+                            text='<i>Longitud<i>',
+                                font=dict(
+				        size=12,
+				        color="gray"),                            
                         ),range=[-180,180],uirevision='mapaglobal',
                         zeroline=False,showgrid=False),
-                    yaxis=go.layout.YAxis(
-                        title=go.layout.yaxis.Title(
-                            text='Latitud',
+                    yaxis=go.layout.YAxis( scaleanchor = "x", scaleratio = 1,
+                        title=go.layout.yaxis.Title( 
+                            text='<i>Latitud<i>',
+                                font=dict(
+				        size=12,
+				        color="gray"),
                         ),range=[-90,90],uirevision='mapaglobal',
                         zeroline=False,showgrid=False))
             }
@@ -177,7 +183,7 @@ def contourf_resta(lons,lats,variable,mes,mesesresta,colorbar_label,minimo,maxim
                             title=colorbar_label, # title here
                             titleside='right',
                             titlefont=dict(
-                                size=14,
+                                size=20,
                                 #family='Arial, sans-serif'
                                 )
                             )
@@ -191,15 +197,15 @@ def contourf_resta(lons,lats,variable,mes,mesesresta,colorbar_label,minimo,maxim
                         hoverinfo='skip')],
             
             'layout':go.Layout(
-                    title='Diferencia '  + textope + textmes + mesesletra + ' menos ' + mesesletraresta,
-                    margin=dict(t=40),
+                    title='Diferencia '  + textope + textmes + mesesletra + ' menos ' + mesesletraresta, 
+                    margin=dict(t=40), title_font_size=20,
                     xaxis=go.layout.XAxis(
-                        title=go.layout.xaxis.Title(
+                        title=go.layout.xaxis.Title( 
                             text='Longitud',
                         ),range=[-180,180],uirevision='mapaglobal',
                         zeroline=False,showgrid=False),
-                    yaxis=go.layout.YAxis(
-                        title=go.layout.yaxis.Title(
+                    yaxis=go.layout.YAxis( scaleanchor = "x", scaleratio = 1,
+                        title=go.layout.yaxis.Title( 
                             text='Latitud',
                         ),range=[-90,90],uirevision='mapaglobal',
                         zeroline=False,showgrid=False))
@@ -238,7 +244,7 @@ def scattermap(lons,lats,name,variable,mes,colorbar_label,minimo,maximo,colormap
                     #hoverinfo='none',
                     hovertemplate='Nombre/País: %{text}<br>Longitud: %{x}<br>Latitud: %{y}<br>Valor: %{marker.color}<extra></extra>',
                     marker=dict(
-                            size=12,
+                            size=18,
                             color=np.around(variable,decimals=2), #set color equal to a variable
                             colorscale=colormap, # one of plotly colorscales
                             cmin=minimo,
@@ -248,7 +254,7 @@ def scattermap(lons,lats,name,variable,mes,colorbar_label,minimo,maximo,colormap
                             title=colorbar_label, # title here
                             titleside='right',
                             titlefont=dict(
-                                size=14,
+                                size=20,
                                 #family='Arial, sans-serif'
                                 )
                             )
@@ -265,14 +271,14 @@ def scattermap(lons,lats,name,variable,mes,colorbar_label,minimo,maximo,colormap
             
             'layout':go.Layout(
                     title=titulo + textmes + ' ' + mesesletra,
-                    margin=dict(t=40),
+                    margin=dict(t=40),  title_font_size= 20,  
                     xaxis=go.layout.XAxis(
                         title=go.layout.xaxis.Title(
                             text='Longitud',
                         ),range=[-180,180],uirevision='mapaglobal',
                         zeroline=False,
                         showgrid=False),
-                    yaxis=go.layout.YAxis(
+                    yaxis=go.layout.YAxis( scaleanchor = "x", scaleratio = 1,
                         title=go.layout.yaxis.Title(
                             text='Latitud',
                         ),range=[-90,90],uirevision='mapaglobal',
@@ -330,7 +336,7 @@ def scattermap_resta(lons,lats,name,variable,mes,mesesresta,colorbar_label,minim
                     #hoverinfo='none',
                     hovertemplate='Nombre/País: %{text}<br>Longitud: %{x}<br>Latitud: %{y}<br>Valor: %{marker.color}<extra></extra>',
                     marker=dict(
-                            size=12,
+                            size=18,
                             color=np.around(variable,decimals=2), #set color equal to a variable
                             colorscale=colormap, # one of plotly colorscales
                             cmin=minimo,
@@ -340,7 +346,7 @@ def scattermap_resta(lons,lats,name,variable,mes,mesesresta,colorbar_label,minim
                             title=colorbar_label, # title here
                             titleside='right',
                             titlefont=dict(
-                                size=14,
+                                size=20,
                                 #family='Arial, sans-serif'
                                 )
                             )
@@ -357,14 +363,14 @@ def scattermap_resta(lons,lats,name,variable,mes,mesesresta,colorbar_label,minim
             
             'layout':go.Layout(
                     title='Diferencia '  + textope + textmes + mesesletra + ' menos ' + mesesletraresta,
-                    margin=dict(t=40),
+                    margin=dict(t=40), title_font_size=20 ,
                     xaxis=go.layout.XAxis(
                         title=go.layout.xaxis.Title(
                             text='Longitud',
                         ),range=[-180,180],uirevision='mapaglobal',
                         zeroline=False,
                         showgrid=False),
-                    yaxis=go.layout.YAxis(
+                    yaxis=go.layout.YAxis( scaleanchor = "x", scaleratio = 1,
                         title=go.layout.yaxis.Title(
                             text='Latitud',
                         ),range=[-90,90],uirevision='mapaglobal',
@@ -386,7 +392,7 @@ def scattermap_climo(lons,lats,name,elev,colorbar_label,minimo,maximo,colormap,c
                     #hoverinfo='none',
                     hovertemplate='Nombre/País: %{text}<br>Longitud: %{x}<br>Latitud: %{y}<br>Valor: %{marker.color}<extra></extra>',
                     marker=dict(
-                            size=12,
+                            size=18,
                             color=np.around(elev,decimals=2), #set color equal to a variable
                             colorscale=colormap, # one of plotly colorscales
                             cmin=minimo,
@@ -396,7 +402,7 @@ def scattermap_climo(lons,lats,name,elev,colorbar_label,minimo,maximo,colormap,c
                             title=colorbar_label, # title here
                             titleside='right',
                             titlefont=dict(
-                                size=14,
+                                size=20,
                                 #family='Arial, sans-serif'
                                 )
                             )
@@ -412,15 +418,15 @@ def scattermap_climo(lons,lats,name,elev,colorbar_label,minimo,maximo,colormap,c
                         hoverinfo='skip')],
             
             'layout':go.Layout(
-                    title=titulo,
+                    title=titulo,  title_font_size= 20, 
                     margin=dict(t=40),
-                    xaxis=go.layout.XAxis(
+                    xaxis=go.layout.XAxis( 
                         title=go.layout.xaxis.Title(
                             text='Longitud',
                         ),range=[-180,180],uirevision='mapaglobal',
                         zeroline=False,
                         showgrid=False),
-                    yaxis=go.layout.YAxis(
+                    yaxis=go.layout.YAxis( scaleanchor = "x", scaleratio = 1,
                         title=go.layout.yaxis.Title(
                             text='Latitud',
                         ),range=[-90,90],uirevision='mapaglobal',
@@ -469,7 +475,7 @@ def grafico_punto(lons,lats,variable,clickData,tipografico,colorlinea,titulo,yla
         y = np.around(list(ydata),decimals=2),        
         marker={'color':colorlinea}
         )],
-        'layout':go.Layout(title={'text':titulo + ' en ' + coords_real,'font':{'size':14}} ,yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
+        'layout':go.Layout(title={'text':titulo + ' en <br>' + coords_real,'font':{'size':20}} ,yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
         }
         return plotclim
     else:
@@ -479,7 +485,7 @@ def grafico_punto(lons,lats,variable,clickData,tipografico,colorlinea,titulo,yla
         mode='lines+markers',
         marker={'color':colorlinea}
         )],
-        'layout':go.Layout(title={'text':titulo + ' en ' + coords_real,'font':{'size':14}} ,yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
+        'layout':go.Layout(title={'text':titulo + ' en <br>' + coords_real,'font':{'size':20}} ,yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
         }        
         return plotclim
 
@@ -504,7 +510,7 @@ def grafico_puntoGHCN(lons,lats,name,elev,variable,clickData,tipografico,colorli
             if idx<=len(lons):
                 namest=str(name.iloc[idx]).strip()
                 eleva=elev.iloc[idx]
-                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + ' Elevación: ' + str(eleva)  + ' m.s.n.m.' 
+                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + '<br> Elevación: ' + str(eleva)  + ' m.s.n.m.' 
                 xdata = 'Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic'.split()
                 ydata = variable.iloc[idx,:]
                 
@@ -512,7 +518,7 @@ def grafico_puntoGHCN(lons,lats,name,elev,variable,clickData,tipografico,colorli
                 idx= (np.abs(lats-lat_mapa)).argmin()
                 namest=str(name.iloc[idx]).strip()
                 eleva=elev.iloc[idx]
-                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + ' Elevación: ' + str(eleva)  + ' m.s.n.m.' 
+                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + '<br> Elevación: ' + str(eleva)  + ' m.s.n.m.' 
                 xdata = 'Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic'.split()
                 ydata = variable.iloc[idx,:]
                 
@@ -533,7 +539,7 @@ def grafico_puntoGHCN(lons,lats,name,elev,variable,clickData,tipografico,colorli
         y = np.around(list(ydata),decimals=2),        
         marker={'color':colorlinea}
         )],
-        'layout':go.Layout(title={'text':titulo + ' en ' + coords_real,'font':{'size':14}},yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
+        'layout':go.Layout(title={'text':titulo + ' en <br>' + coords_real,'font':{'size':20}},yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
         }
         return plotclim
     else:
@@ -543,7 +549,7 @@ def grafico_puntoGHCN(lons,lats,name,elev,variable,clickData,tipografico,colorli
         mode='lines+markers',
         marker={'color':colorlinea}
         )],
-        'layout':go.Layout(title={'text':titulo + ' en ' + coords_real,'font':{'size':14}},yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
+        'layout':go.Layout(title={'text':titulo + ' en  <br>' + coords_real,'font':{'size':20}},yaxis = {'title':ylabel,'fixedrange':True,'zeroline':False},xaxis = {'title':'Mes','showgrid': False,'fixedrange':True})
         }        
         return plotclim
     
@@ -568,7 +574,7 @@ def grafico_puntoGHCNclimo(lons,lats,name,elev,variable,variable2,clickData,tipo
             if idx<=len(lons):
                 namest=str(name.iloc[idx]).strip()
                 eleva=elev.iloc[idx]
-                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + ' Elevación: ' + str(eleva)  + ' m.s.n.m.' 
+                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + '<br> Elevación: ' + str(eleva)  + ' m.s.n.m.' 
                 xdata = 'Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic'.split()
                 ydata1 = variable.iloc[idx,:]
                 ydata2= variable2.iloc[idx,:]
@@ -577,7 +583,7 @@ def grafico_puntoGHCNclimo(lons,lats,name,elev,variable,variable2,clickData,tipo
                 idx= (np.abs(lats-lat_mapa)).argmin()
                 namest=str(name.iloc[idx]).strip()
                 eleva=elev.iloc[idx]
-                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + ' Elevación: ' + str(eleva)  + ' m.s.n.m.' 
+                coords_real=namest + ' Latitud: ' + str(lats.iloc[idx]) + ', Longitud: ' + str(lons.iloc[idx]) + '<br> Elevación: ' + str(eleva)  + ' m.s.n.m.' 
                 xdata = 'Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic'.split()
                 ydata1 = variable.iloc[idx,:]
                 ydata2= variable2.iloc[idx,:]
@@ -605,7 +611,7 @@ def grafico_puntoGHCNclimo(lons,lats,name,elev,variable,variable2,clickData,tipo
     )]
     plotclim={'data': traces,
                     'layout': {
-                        'title': {'text':titulo + ' en ' + coords_real + ' (Precip. total ' + str(suma_pp) + ' mm)','font':{'size':12}},
+                        'title': {'text':titulo + ' en <br>' + coords_real + '<br> (Precip. total ' + str(suma_pp) + ' mm)','font':{'size':20}},
                         'showlegend': False,
                         'legend': {'x': 0,
                                    'y': 1,
@@ -676,7 +682,7 @@ def grafico_climo(lons,lats,variable1,variable2,clickData,tipografico,colorlinea
     )]
     plotclim={'data': traces,
                     'layout': {
-                        'title': {'text':titulo + ' en ' + coords_real + ' (Precip. total ' + str(suma_pp) + ' mm)','font':{'size':14}},
+                        'title': {'text':titulo + ' en <br>' + coords_real + ' (Precip. total ' + str(suma_pp) + ' mm)','font':{'size':20}},
                         'showlegend': False,
                         'legend': {'x': 0,
                                    'y': 1,
