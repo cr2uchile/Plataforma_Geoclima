@@ -37,19 +37,17 @@ body{
 
 
 .logoCr2{
-  height: 65px;
   padding: 18px;
   margin-top: 10px;
-  height: 35px;
+  height: 55px;
   width: auto;
 }
 
 .logoclima{
-  height: 60px;
   padding: 0px;
   margin-left: 15px;
   margin-top: 25px;
-  height: 75px;
+  height: 95px;
   width: auto;
 
 }
@@ -132,6 +130,10 @@ h5{
 
 div#div-control{
     height: 1100px;
+}
+
+div#controlmap.buttons{
+    margin-left: -10px
 }
 
 div#div-control.bg-white2.user-control{

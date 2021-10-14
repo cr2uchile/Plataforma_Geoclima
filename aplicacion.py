@@ -162,30 +162,22 @@ variables_pp=[
 #############################################################################
 #############################################################################
 #############################################################################
-texto='''# GeoClima (versión Web)
+texto='''# ClimaWeb (versión Web)
 ---------------
-GeoClima es una aplicación web que permite visualizar mapas globales de los promedios históricos de diversas variables 
-climáticas a nivel mensual. También permite calcular el mapa de diferencia de ese promedio entre distintos meses junto con 
-el ciclo medio anual en cada punto del planeta donde existe información.
-Las variables disponibles son la temperatura (media, máxima y mínima), precipitación, presión a nivel del mar y viento en 
-varios niveles. Dependiendo de la variable, hay diversas bases desde donde se obtuvieron los datos, que incluyen registros 
-en estaciones de medición y reanálisis atmosféricos.
+ClimaWeb es una aplicación que permite visualizar mapas globales de los promedios históricos de diversas variables climáticas a nivel mensual. También permite calcular el mapa de diferencia de ese promedio entre distintos meses junto con el ciclo medio anual en cada punto del planeta donde existe información. Las variables disponibles son la temperatura (media, máxima y mínima), precipitación, presión a nivel del mar y viento en varios niveles. Dependiendo de la variable, hay diversas bases desde donde se obtuvieron los datos, que incluyen registros en estaciones de medición y reanálisis atmosféricos.
 
- 
-Esta aplicación está pensada como un apoyo a la docencia en distintos niveles. La versión web es una extensión del software 
-original desarrollado el año 2002, bajo la supervisión del Profesor Patricio Aceituno Gutiérrez, del Departamento de Geofísica 
-de la Universidad de Chile.
-Esta nueva versión de web GeoClima fue desarrollada el año 2020 por Piero Mardones, Geofísico y 
-Magíster en Meteorología y Climatología (U. Chile), y socio fundador de geoatlas.cl, con la supervisión de René Garreaud, 
-académico del Departamento de Geofísica U. Chile y subdirector del Centro de Ciencia del Clima y la Resiliencia (CR)2. 
-El proyecto recibió el apoyo del Departamento de Geofísica y del (CR)2, a través del soporte de datos y computo por Francisca Muñoz 
-y Camilo Menares. El diseño fue revisado por Giselle Ogaz. 
-Si necesitas información sobre cómo usar esta plataforma, puedes revisar el Tutorial de Uso.
+Esta aplicación está pensada como un apoyo a la docencia en distintos niveles. La misma está inspirada en el software GeoClima desarrollado el año 2002 por Bernhard Lopez bajo la supervisión del Profesor Patricio Aceituno Gutiérrez, del Departamento de Geofísica de la Universidad de Chile.  ClimaWeb fue desarrollado el año 2020 por Piero Mardones, Geofísico y Magíster en Meteorología y Climatología (U. Chile), y socio fundador de geoatlas.cl, con la supervisión de René Garreaud, académico del Departamento de Geofísica de la U. Chile y subdirector del Centro de Ciencia del Clima y la Resiliencia (CR)2. El proyecto recibió el apoyo del Departamento de Geofísica y del (CR)2, a través del soporte de datos y computo por Francisca Muñoz y Camilo Menares. El diseño fue revisado por Giselle Ogaz. Si necesitas información sobre cómo usar esta plataforma, puedes revisar el Tutorial de Uso.
 
 
-Data Scientist: Piero Mardones, pieromardonesb@gmail.com
+Data Scientist: 
 
-Soporte       : Datos y Cómputos Cr2, cr2sysadmin@dgf.cl
+Piero Mardones, pieromardonesb@gmail.com
+
+Camilo Menares, camilo.menares@uchile.cl
+
+Soporte       : 
+
+Datos y Cómputos Cr2, cr2sysadmin@dgf.cl
 
 
 
@@ -198,7 +190,7 @@ modal=html.Div(
 
 app = dash.Dash(update_title='Actualizando...')
 #app.scripts.append_script({"external_url": "https://cdn.plot.ly/plotly-locale-es-latest.js"})
-app.title = 'GeoClima - CR2'
+app.title = 'ClimaWEB - CR2'
 # App Layout
 app.layout = html.Div(
     children=[
@@ -208,16 +200,12 @@ app.layout = html.Div(
         html.Div(
             className="study-browser-banner row",
             children=[
-                html.Div(className="h2-title", children=[html.A([html.Img(className="logoclima", src=app.get_asset_url("logo_geoclima_blanco.png"))], href="http://geoclima.cr2.cl/")]),
+                html.Div(className="h2-title", children=[html.A([html.Img(className="logoclima", src=app.get_asset_url("logo_climaweb_blanco.png"))], href="http://climaweb.cr2.cl/")]),
                 html.Div(
                     className="div-logo",
                     children=[html.A(id='instructions-button',className='links',children=[html.H6('Acerca de', style={'display':'inline-block','float':'left','margin-top':'40px','margin-right':'10px'})]),
                      html.A(className='links',children=[html.H6('Tutorial de uso', style={'display':'inline-block','float':'left','padding-left':'5px','margin-top':'40px','margin-right':'15px'})],href=app.get_asset_url("tutorial_geoclima.pdf"),target='_blank'),
-                     html.A([
-                     html.Img(
-                        className="logo", src=app.get_asset_url("Logo_nube.png")
-                    )
-                    ], href="http://www.geoatlas.cl/"),
+
                     html.A([
                      html.Img(
                         className="logoCr2", src=app.get_asset_url("logo_transparente.png")
@@ -225,7 +213,7 @@ app.layout = html.Div(
                     ], href="http://www.cr2.cl/")
                     ]
                 ),modal,
-                html.Div(className="h2-title-mobile", children=[html.A([html.Img(className="logoclimamobile", src=app.get_asset_url("logo_geoclima_blanco.png"))], href="http://geoclima.cr2.cl/")]),
+                html.Div(className="h2-title-mobile", children=[html.A([html.Img(className="logoclimamobile", src=app.get_asset_url("logo_climaweb_blanco.png"))], href="http://climaweb.cr2.cl/")]),
             ],
         ),
         # Cuerpo de la app
@@ -421,6 +409,16 @@ from callbacks import *
 ########### RUN APP #######################################################
 #############################################################################
 #############################################################################
+
+app.scripts.config.serve_locally = False
+app.scripts.append_script({
+    'external_url':  'https://cdn.jsdelivr.net/gh/lppier/lppier.github.io/async_src.js'
+})
+app.scripts.append_script({
+    'external_url': 'https://cdn.jsdelivr.net/gh//cr2uchile/Plataforma_Geoclima/gtag.js'
+})
+
+
 if __name__ == '__main__':
 	#app.run_server()
     app.run_server(debug=False,port='8052',host='0.0.0.0')
