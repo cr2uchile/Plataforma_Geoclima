@@ -128,7 +128,7 @@ options_enabled=[
     {'label': 'Noviembre', 'value': 10, 'disabled':False}]
 
 variables=[
-    {'label': 'Climograma (ciclo medio anual de temperatura y precipitación en la estación seleccionada)', 'value': 'climo', 'disabled':False},
+
     {'label': 'Mapa de temperatura media', 'value': 'tmean', 'disabled':False},
     {'label': 'Mapa de temperatura maxima', 'value': 'tmax', 'disabled':False},
     {'label': 'Mapa de temperatura mínima', 'value': 'tmin', 'disabled':False},
@@ -136,12 +136,12 @@ variables=[
     {'label': 'Mapa de presión a nivel del mar', 'value': 'slp', 'disabled':False},
     {'label': 'Mapa de viento zonal a 10m', 'value': 'uwnd10', 'disabled':False},
     {'label': 'Mapara de viento meridional a 10m', 'value': 'vwnd10', 'disabled':False},
-    {'label': 'Mapra de viento zonal a 200 hPa', 'value': 'uwnd200', 'disabled':False},
+    {'label': 'Mapa de viento zonal a 200 hPa', 'value': 'uwnd200', 'disabled':False},
     {'label': 'Mapa de viento meridional a 200 hPa', 'value': 'vwnd200', 'disabled':False},
-    {'label': 'Mapa de temperatura superficial del mar', 'value': 'sst', 'disabled':False}]
+    {'label': 'Mapa de temperatura superficial del mar', 'value': 'sst', 'disabled':False},
+    {'label': 'Climograma (ciclo medio anual de temperatura y precipitación en la estación seleccionada)', 'value': 'climo', 'disabled':False}]
 
 variables_pp=[
-    {'label': 'Climograma (ciclo medio anual de temperatura y precipitación en la estación seleccionada)  ', 'value': 'climo', 'disabled':True},
     {'label': 'Temperatura media', 'value': 'tmean', 'disabled':True},
     {'label': 'Temperatura maxima', 'value': 'tmax', 'disabled':True},
     {'label': 'Temperatura mínima', 'value': 'tmin', 'disabled':True},
@@ -151,7 +151,8 @@ variables_pp=[
     {'label': 'Viento meridional a 10m', 'value': 'vwnd10', 'disabled':True},
     {'label': 'Viento zonal a 200 hPa', 'value': 'uwnd200', 'disabled':True},
     {'label': 'Viento meridional a 200 hPa', 'value': 'vwnd200', 'disabled':True},
-    {'label': 'Temperatura superficial del mar', 'value': 'sst', 'disabled':True}]
+    {'label': 'Temperatura superficial del mar', 'value': 'sst', 'disabled':True},
+    {'label': 'Climograma (ciclo medio anual de temperatura y precipitación en la estación seleccionada)  ', 'value': 'climo', 'disabled':True}]
 
 
 #############################################################################

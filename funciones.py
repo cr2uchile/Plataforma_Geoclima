@@ -117,7 +117,10 @@ def contourf(lons,lats,variable,mes,colorbar_label,minimo,maximo,colormap,coastc
 				        size=12,
 				        color="gray"),                            
                         ),range=[-180,180],uirevision='mapaglobal',
-                        zeroline=False,showgrid=False),
+                        zeroline=False,showgrid=False,
+                               tickmode = 'array',
+			        tickvals = [-180, -150 ,-120 ,-90, -60 ,-30 ,0, 30, 60, 90, 120 ,150, 180],
+			        ticktext = ['180W', '150W' ,'120W'  ,'90W', '60W' ,'30W','0','30E','60E', '90E', '120E','150E','180E']),
                     yaxis=go.layout.YAxis( scaleanchor = "x", scaleratio = 1,
                         title=go.layout.yaxis.Title( 
                             text='<i>Latitud<i>',
@@ -125,7 +128,11 @@ def contourf(lons,lats,variable,mes,colorbar_label,minimo,maximo,colormap,coastc
 				        size=12,
 				        color="gray"),
                         ),range=[-90,90],uirevision='mapaglobal',
-                        zeroline=False,showgrid=False))
+                        zeroline=False,showgrid=False,
+                               tickmode = 'array',
+			        tickvals = [-90, -60 ,-30 ,0, 30, 60, 90],
+			        ticktext = ['90S', '60S' ,'30S','0','30N','60N', '90N']),
+                        )
             }
     
     return figura
